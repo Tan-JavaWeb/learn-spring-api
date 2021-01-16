@@ -1,0 +1,3 @@
+connect postgresql
+https://mkyong.com/spring-boot/spring-boot-spring-data-jpa-postgresql/
+https://medium.com/@pramodshehan/simple-rest-api-with-springboot-postgres-and-docker-d15071908b8a
