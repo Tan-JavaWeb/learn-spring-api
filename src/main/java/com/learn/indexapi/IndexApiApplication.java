@@ -1,4 +1,4 @@
-package com.learning.indexapi;
+package com.learn.indexapi;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.learn.indexapi.entities.Demo;
 
 @SpringBootApplication
 public class IndexApiApplication implements CommandLineRunner {
@@ -22,9 +24,18 @@ public class IndexApiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		log.info("StartApplication...");
-		repository.save(new Demo(Long.valueOf(1), "Java"));
-		repository.save(new Demo(Long.valueOf(2), "Node"));
-		repository.save(new Demo(Long.valueOf(3), "Python"));
+		Demo demo = new Demo();
+		demo.setId(Long.valueOf(1));
+		demo.setName("Java");
+		repository.save(demo);
+		demo = new Demo();
+		demo.setId(Long.valueOf(2));
+		demo.setName("Node");
+		repository.save(demo);
+		demo = new Demo();
+		demo.setId(Long.valueOf(3));
+		demo.setName("Python");
+		repository.save(demo);
 
 		System.out.println("\nfindAll()");
 		repository.findAll().forEach(x -> System.out.println(x.getId()));

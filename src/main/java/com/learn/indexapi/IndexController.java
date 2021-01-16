@@ -1,12 +1,15 @@
-package com.learning.indexapi;
+package com.learn.indexapi;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.learn.indexapi.entities.Demo;
+
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class IndexController {
 	
