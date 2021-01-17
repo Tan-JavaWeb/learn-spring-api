@@ -29,7 +29,6 @@ public class DemoService {
 		
 		for(Demo demo: demos) {
 			demoDtos.add(mapperService.mapDemoToDto(demo));
-			log.info("sàdfsdf");
 		}
 		
 		return demoDtos;
