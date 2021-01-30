@@ -13,7 +13,13 @@ public final class UrlConst {
 
 	public static final String DEMO = API_V_1 + "/getAllDemo";
 	
-	public static final String LINK_HOME_PAGE = API_V_1 + "/linkhomepage";
+	public static final String HOME_LINK = API_V_1 + "/homelink";
 	
-	public static final String LINK_HOME_PAGE_DETAIL = API_V_1 + "/linkhomepagedetail";
+	public static final String HOME_LINK_BY_ID = API_V_1 + "/homelink/{id}";
+	
+	public static final String HOME_LINK_UPDATE = API_V_1 + "/homelink/update/{id}";
+	
+	public static final String HOME_LINK_DELETE = API_V_1 + "/homelink/delete/{id}";
+	
+	public static final String LINK_HOME_PAGE_DETAIL = API_V_1 + "/homelinkdetail";
 }
