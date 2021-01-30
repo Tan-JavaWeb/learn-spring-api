@@ -102,7 +102,7 @@ public class HomeLinkService {
 			return checkResult;
 		}
 		
-		if (homeLinkDto == null || homeLinkDto.getName().isEmpty() || homeLinkDto.getName().isBlank()) {
+		if (homeLinkDto == null || homeLinkDto.getName() == null || homeLinkDto.getName().trim().isEmpty()) {
 			value.put("name", CustomMessages.ShowMessage(MessagesConst.MES_E1_002, new String[] { "Tên" }));
 			checkResult.setMessgaes(value);
 			return checkResult;
