@@ -20,11 +20,11 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@Table(name = "link_home_page_details")
+@Table(name = "home_link_details")
 @Entity
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class LinkHomePageDetail extends BaseEntity {
+public class HomeLinkDetailEntity extends BaseEntity {
 	private static final long serialVersionUID = -6920388752121714720L;
 
 	@Id
@@ -39,10 +39,10 @@ public class LinkHomePageDetail extends BaseEntity {
 	private Long sortOrder;
 
 	@ManyToOne
-    @JoinColumn(name = "link_home_page_id", nullable = false)
+    @JoinColumn(name = "home_link_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
     @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("link_home_page_id")
-	private LinkHomePage linkHomePage;
+    @JsonProperty("home_link_id")
+	private HomeLinkEntity home_link;
 }
