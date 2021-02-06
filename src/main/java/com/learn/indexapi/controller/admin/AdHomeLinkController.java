@@ -84,7 +84,7 @@ public class AdHomeLinkController {
 			return new ApiResponse<Map<String, String>>(new HashMap<>(), HttpStatus.EXPECTATION_FAILED);
 		}
 	}
-
+	
 	/**
 	 *  Update 1 record table home_links
 	 * @param id
@@ -108,6 +108,23 @@ public class AdHomeLinkController {
 			return new ApiResponse<Map<String, String>>(new HashMap<>(), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ApiResponse<Map<String, String>>(new HashMap<>(), HttpStatus.EXPECTATION_FAILED);
+		}
+	}
+	
+	/**
+	 * Update sort_order table home_links
+	 * @param listHomeLinkDto
+	 * @return
+	 */
+	@PostMapping(UrlConst.HOME_LINK_UPDATE_SORT)
+	public ApiResponse<String> updateSort(@RequestBody List<HomeLinkDto> listHomeLinkDto) {
+		try {
+			for(HomeLinkDto homeLinkDto: listHomeLinkDto) {
+				homeLinkService.update(homeLinkDto.getId(), homeLinkDto);
+			}
+			return ApiResponse.okStatus("Cập nhật thành công");
+		} catch (Exception e) {
+			return new ApiResponse<String>("Cập nhật thất bại", HttpStatus.EXPECTATION_FAILED);
 		}
 	}
 
