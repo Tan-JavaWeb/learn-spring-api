@@ -19,6 +19,8 @@ public final class UrlConst {
 	
 	public static final String HOME_LINK_UPDATE = API_V_1 + "/homelink/update/{id}";
 	
+	public static final String HOME_LINK_UPDATE_SORT = API_V_1 + "/homelink/updatesort";
+	
 	public static final String HOME_LINK_DELETE = API_V_1 + "/homelink/delete/{id}";
 	
 	public static final String LINK_HOME_PAGE_DETAIL = API_V_1 + "/homelinkdetail";
